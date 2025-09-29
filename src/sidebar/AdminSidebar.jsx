@@ -17,7 +17,6 @@ import AdminNavbar from "../components/admin/navbar/AdminNavbar";
 
 export default function AdminSidebar() {
   const location = useLocation();
-  console.log(location.pathname)
   const [collapsed, setCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -94,8 +93,9 @@ export default function AdminSidebar() {
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
       <div
-        className={`${collapsed ? "w-16" : "w-64"
-          } bg-white border-r shadow-md transition-all duration-300 flex flex-col fixed h-full`}
+        className={`${
+          collapsed ? "w-16" : "w-64"
+        } bg-white border-r shadow-md transition-all duration-300 flex flex-col fixed h-full`}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4">
@@ -112,12 +112,19 @@ export default function AdminSidebar() {
         <nav className="flex-1 overflow-auto">
           <ul className="space-y-1 px-2">
             {menuItems.map((item, idx) => {
+              const isParentActive =
+                item.path && location.pathname === item.path
+                  ? true
+                  : item.children?.some((child) => location.pathname === child.path);
+
               return item.children ? (
                 <li key={idx}>
                   {/* Parent Button */}
                   <button
                     onClick={() => toggleMenu(item.name)}
-                    className="flex items-center justify-between w-full p-2 rounded-lg text-gray-700"
+                    className={`flex items-center justify-between w-full p-2 rounded-lg text-gray-700 ${
+                      isParentActive ? "bg-blue-600 text-white" : "hover:bg-gray-100"
+                    }`}
                   >
                     <div className="flex items-center gap-2">
                       {item.icon}
@@ -126,16 +133,17 @@ export default function AdminSidebar() {
                     {!collapsed && (
                       <ChevronDown
                         size={16}
-                        className={`transition-transform duration-300 ${activeMenu === item.name ? "rotate-180" : ""
-                          }`}
+                        className={`transition-transform duration-300 ${
+                          activeMenu === item.name ? "rotate-180" : ""
+                        }`}
                       />
                     )}
                   </button>
 
-                  {/* Child links */}
+                  {/* Child Links */}
                   <div
                     style={{
-                      maxHeight: activeMenu === item.name ? `${item.children.length * 2.5}rem` : "0",
+                      maxHeight: activeMenu === item.name || isParentActive ? `${item.children.length * 2.5}rem` : "0",
                     }}
                     className="overflow-hidden transition-all duration-300 ease-in-out"
                   >
@@ -144,8 +152,11 @@ export default function AdminSidebar() {
                         <li key={cIdx}>
                           <NavLink
                             to={child.path}
-                            className={`block w-full text-left p-2 rounded-md text-sm text-gray-700 ${child.path === location.pathname ? "bg-activeColor text-white" : ""
-                              }`}
+                            className={`block w-full text-left p-2 rounded-md text-sm ${
+                              location.pathname === child.path
+                                ? "bg-blue-600 text-white"
+                                : "text-gray-700 hover:bg-gray-100"
+                            }`}
                             onClick={() => setActiveMenu(item.name)}
                           >
                             {child.name}
@@ -159,7 +170,11 @@ export default function AdminSidebar() {
                 <li key={idx}>
                   <NavLink
                     to={item.path}
-                    className="flex items-center gap-2 p-2 rounded-lg w-full text-left text-gray-700"
+                    className={`flex items-center gap-2 p-2 rounded-lg w-full text-left ${
+                      location.pathname === item.path
+                        ? "bg-blue-600 text-white"
+                        : "text-gray-700 hover:bg-gray-100"
+                    }`}
                     onClick={() => setActiveMenu(null)}
                   >
                     {item.icon}

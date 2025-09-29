@@ -1,6 +1,55 @@
 import React from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+} from "recharts";
 import { Users, Home, DollarSign } from "lucide-react";
+
+// Static data
+const clientsData = [
+  { month: "Jan", clients: 10 },
+  { month: "Feb", clients: 15 },
+  { month: "Mar", clients: 12 },
+  { month: "Apr", clients: 20 },
+  { month: "May", clients: 18 },
+];
+
+const revenueData = [
+  { month: "Jan", revenue: 40000 },
+  { month: "Feb", revenue: 50000 },
+  { month: "Mar", revenue: 35000 },
+  { month: "Apr", revenue: 60000 },
+  { month: "May", revenue: 45000 },
+  { month: "Jun", revenue: 45000 },
+  { month: "July", revenue: 35000 },
+  { month: "Aug", revenue: 55000 },
+  { month: "Sep", revenue: 60000 },
+  { month: "Oct", revenue: 50000 },
+  { month: "Nov", revenue: 450000 },
+  { month: "Dec", revenue: 4000 },
+];
+
+const propertiesData = [
+  { month: "Jan", properties: 5 },
+  { month: "Feb", properties: 8 },
+  { month: "Mar", properties: 4 },
+  { month: "Apr", properties: 10 },
+  { month: "May", properties: 6 },
+  { month: "Jun", properties: 18 },
+  { month: "July", properties: 15 },
+  { month: "Aug", properties: 12 },
+  { month: "Sep", properties: 7 },
+  { month: "Oct", properties: 8 },
+  { month: "Nov", properties: 9 },
+  { month: "Dec", properties: 10 },
+];
 
 const clients = [
   { id: 1, name: "Alice Johnson", email: "alice@example.com", phone: "+1 123 456 7890" },
@@ -14,18 +63,10 @@ const properties = [
   { id: 3, title: "Beach House", location: "Miami", price: "$2,500,000" },
 ];
 
-const revenueData = [
-  { month: "Jan", revenue: 40000 },
-  { month: "Feb", revenue: 50000 },
-  { month: "Mar", revenue: 35000 },
-  { month: "Apr", revenue: 60000 },
-  { month: "May", revenue: 45000 },
-];
-
 export default function HomePage() {
   return (
     <div className="p-6 bg-gray-100 min-h-screen space-y-6">
-      {/* Dashboard Summary Cards */}
+      {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white p-4 rounded-2xl shadow flex items-center gap-4">
           <div className="bg-blue-100 p-3 rounded-lg">
@@ -58,22 +99,57 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Revenue Chart */}
-      <div className="bg-white p-6 rounded-2xl shadow">
-        <h2 className="text-lg font-semibold mb-4">Revenue Analytics</h2>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={revenueData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis />
-            <Tooltip />
-            <Line type="monotone" dataKey="revenue" stroke="#4F46E5" strokeWidth={2} />
-          </LineChart>
-        </ResponsiveContainer>
+      {/* Charts */}
+      <div className=" gap-6  ">
+        {/* Revenue Chart */}
+        <div className="bg-white p-6 rounded-2xl shadow w-full ">
+          <h2 className="text-lg font-semibold mb-4">Revenue Analytics</h2>
+          <ResponsiveContainer width="100%" height={250}>
+            <LineChart data={revenueData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip />
+              <Line type="monotone" dataKey="revenue" stroke="#4F46E5" strokeWidth={2} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Properties Chart */}
+        <div className="bg-white p-6 rounded-2xl shadow w-full mt-6 ">
+          <h2 className="text-lg font-semibold mb-4">Properties Added</h2>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={propertiesData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="properties" fill="#10B981" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+
+      </div>
+      <div>
+        {/* Clients Chart */}
+        <div className="bg-white p-6 rounded-2xl shadow">
+          <h2 className="text-lg font-semibold mb-4">New Clients</h2>
+          <ResponsiveContainer width="100%" height={250}>
+            <LineChart data={clientsData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip />
+              <Line type="monotone" dataKey="clients" stroke="#F59E0B" strokeWidth={2} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
+      {/* Tables */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Recent Clients */}
+        {/* Clients Table */}
         <div className="bg-white p-6 rounded-2xl shadow overflow-x-auto">
           <h2 className="text-lg font-semibold mb-4">Recent Clients</h2>
           <table className="min-w-full divide-y divide-gray-200">
@@ -98,7 +174,7 @@ export default function HomePage() {
           </table>
         </div>
 
-        {/* Recent Properties */}
+        {/* Properties Table */}
         <div className="bg-white p-6 rounded-2xl shadow overflow-x-auto">
           <h2 className="text-lg font-semibold mb-4">Recent Properties</h2>
           <table className="min-w-full divide-y divide-gray-200">
