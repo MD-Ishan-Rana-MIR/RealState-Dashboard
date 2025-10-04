@@ -57,7 +57,6 @@ export default function AdminSidebar() {
       children: [
         { name: "Blogs", path: "/admin-dashboard/content/blogs" },
         { name: "About", path: "/admin-dashboard/content/about" },
-        { name: "Testimonials", path: "/admin-dashboard/content/content" },
         { name: "Faq", path: "/admin-dashboard/content/faq" },
         { name: "Privacy", path: "/admin-dashboard/content/privacy" },
         { name: "Terms", path: "/admin-dashboard/content/terms" },

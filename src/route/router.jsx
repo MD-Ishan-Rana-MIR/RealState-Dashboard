@@ -9,6 +9,10 @@ import AddAgents from "../pages/admin/agents/AddAgents";
 import AllAgents from "../pages/admin/agents/AllAgents";
 import AllClients from "../pages/admin/clients/AllClients";
 import ClientRequest from "../pages/admin/clients/ClientRequest";
+import PrivacyUpload from "../pages/admin/content/PrivacyUpload";
+import BlogUpload from "../pages/admin/content/BlogUpload";
+import AboutUpload from "../pages/admin/content/AboutUpload";
+import TermsUpload from "../pages/admin/content/TermsUpload";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +52,23 @@ export const router = createBrowserRouter([
             {
                 path : "clients/requests",
                 element : <ClientRequest></ClientRequest>
+            },
+            // content 
+            {
+                path : "content/privacy",
+                element : <PrivacyUpload></PrivacyUpload>
+            },
+            {
+                path : "content/blogs",
+                element : <BlogUpload></BlogUpload>
+            },
+            {
+                path : "content/about",
+                element : <AboutUpload></AboutUpload>
+            },
+            {
+                path : "content/terms",
+                element : <TermsUpload/>
             }
         ]
     },

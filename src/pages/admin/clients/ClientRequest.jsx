@@ -34,7 +34,7 @@ export default function ClientRequest() {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Pending Clients</h1>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center gap-2">
+        <button className="bg-btn text-white px-4 py-2 rounded-lg  transition flex items-center gap-2">
           <Eye size={16} /> Add New Client
         </button>
       </div>
@@ -44,13 +44,13 @@ export default function ClientRequest() {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">#</th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Name</th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Email</th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Phone</th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Inquiries</th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">Status</th>
-              <th className="px-6 py-3 text-right text-sm font-medium text-gray-500 uppercase">Actions</th>
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">#</th>
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">Name</th>
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">Email</th>
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">Phone</th>
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">Inquiries</th>
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">Status</th>
+              <th className="px-6 py-3 text-right text-sm font-medium titleColor uppercase">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
