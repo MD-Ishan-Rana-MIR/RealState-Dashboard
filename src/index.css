@@ -117,3 +117,11 @@
     color: black;
     font-weight: 600;
 }
+
+.titleColor{
+    color: #2563EB;
+}
+
+.btnColor {
+    background: #0F172A;
+}

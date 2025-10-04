@@ -11,7 +11,7 @@ export default function NotFoundPage() {
         </p>
         <Link
           to="/admin-dashboard"
-          className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+          className="inline-block px-6 py-3 btnColor text-white font-medium rounded-lg  transition-colors"
         >
           Go Back to Dashboard
         </Link>

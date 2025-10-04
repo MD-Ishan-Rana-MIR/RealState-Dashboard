@@ -46,22 +46,22 @@ export default function AllProperties() {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">
                 #
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">
                 Title
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">
                 Location
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">
                 Price
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-left text-sm font-medium titleColor uppercase">
                 Status
               </th>
-              <th className="px-6 py-3 text-right text-sm font-medium text-gray-500 uppercase">
+              <th className="px-6 py-3 text-right text-sm font-medium titleColor uppercase">
                 Actions
               </th>
             </tr>
