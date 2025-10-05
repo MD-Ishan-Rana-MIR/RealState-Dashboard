@@ -12,7 +12,7 @@ import {
   UserCircle,
   ChevronDown,
 } from "lucide-react";
-import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { Outlet, NavLink, useLocation, Link } from "react-router-dom";
 import AdminNavbar from "../components/admin/navbar/AdminNavbar";
 
 export default function AdminSidebar() {
@@ -98,7 +98,7 @@ export default function AdminSidebar() {
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4">
-          {!collapsed && <img src="/src/assets/images/logos/logo.svg" alt="Logo" />}
+          {!collapsed && <Link to={"/admin-dashboard"}><img src="/src/assets/images/logos/logo.svg" alt="Logo" /></Link> }
           <button
             onClick={() => setCollapsed(!collapsed)}
             className="p-2 rounded-lg hover:bg-gray-200 transition-colors"

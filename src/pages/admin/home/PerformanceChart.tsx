@@ -54,7 +54,7 @@ const PerformanceChart = () => {
     <div className=' p-6 w-[40%] shadow bg-white rounded-2xl  ' >
       
         <div>
-          <h5 className="card-title">Your Performance</h5>
+          <h5 className="h5Tag">Your Performance</h5>
           <p className="card-subtitle pColor">Last check on 25 february</p>
         </div>
         <div className="grid grid-cols-12 mt-6">
@@ -101,7 +101,7 @@ const PerformanceChart = () => {
               height="230px"
               width="100%"
             />
-            <h4 className="text-center text-3xl md:mt-3 font-semibold ">275</h4>
+            <h4 className="text-center  md:mt-3 h5Tag ">275</h4>
             <p className="text-sm text-center mt-3 pColor ">
             Learn insigs how to manage all aspects of your startup.
             </p>
