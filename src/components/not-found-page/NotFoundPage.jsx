@@ -10,7 +10,7 @@ export default function NotFoundPage() {
           Oops! The page you are looking for does not exist.
         </p>
         <Link
-          to="/admin-dashboard"
+          to="/"
           className="inline-block px-6 py-3 btnColor text-white font-medium rounded-lg  transition-colors"
         >
           Go Back to Dashboard

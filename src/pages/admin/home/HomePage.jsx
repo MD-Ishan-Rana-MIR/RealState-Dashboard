@@ -215,14 +215,33 @@ import SalesOverviewChart from './SalesOverviewChart'
 
 const HomePage = () => {
   return (
-    <div>
-      {/* <RevenueChart></RevenueChart> */}
-      {/* <Budget></Budget> */}
-      {/* <CustomerChart></CustomerChart> */}
-      {/* <ProjectChart></ProjectChart> */}
-      {/* <PerformanceChart></PerformanceChart> */}
-      {/* <Customer></Customer> */}
-      <SalesOverviewChart></SalesOverviewChart>
+    <div className=' overflow-x-auto ' >
+      <div className="flex flex-wrap gap-6">
+        {/* Left Column */}
+        <div className="flex-1 min-w-[300px]">
+          <Budget />
+
+          <div className="flex  gap-6 mt-6">
+            <div className="flex-1 min-w-[250px]">
+              <CustomerChart />
+            </div>
+            <div className="flex-1 min-w-[250px]">
+              <ProjectChart />
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="flex-1 min-w-[300px]">
+          <RevenueChart />
+        </div>
+      </div>
+
+      <div className=' flex gap-x-5 mt-10 ' >
+        <PerformanceChart></PerformanceChart>
+        <Customer></Customer>
+        <SalesOverviewChart></SalesOverviewChart>
+      </div>
     </div>
   )
 }
