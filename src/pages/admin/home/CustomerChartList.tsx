@@ -53,7 +53,7 @@ const ChartData: any = {
 
 const CustomerChart = () => {
     return (
-        <div className=' bg-[#C5F2F1] w-[20%] rounded-2xl ' >
+        <div className=' bg-[#C5F2F1] w-[100%] rounded-2xl  h-[200px]  ' >
 
             <div className="bg-lightsecondary  ">
                 <div className="p-6">

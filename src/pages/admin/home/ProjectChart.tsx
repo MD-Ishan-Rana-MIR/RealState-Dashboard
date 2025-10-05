@@ -78,7 +78,7 @@ const ProjectChart = () => {
         },
     };
     return (
-        <div className=' w-[20%] bg-[#FFC5D6] p-6  rounded-2xl ' >
+        <div className='  w-[100%] bg-[#FFC5D6] p-6  rounded-2xl ' >
 
             <div>
                 <p className="text-subtitle">Projects</p>
