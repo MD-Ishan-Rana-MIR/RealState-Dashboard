@@ -82,7 +82,7 @@ const ProjectChart = () => {
 
             <div>
                 <p className="text-subtitle">Projects</p>
-                <h5 className="text-xl">78,298</h5>
+                <h5 className="h5Tag">78,298</h5>
                 <div className="flex items-center mt-1 gap-1.5">
                     <span className="rounded-full p-1 bg-lightsuccess dark:bg-lightsuccess text-success flex items-center justify-center ">
                         <ArrowLeft size={15} />

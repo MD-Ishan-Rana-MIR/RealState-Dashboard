@@ -76,22 +76,22 @@ const RevenueChart = () => {
           <div className="flex gap-4 items-center">
             <span className="h-12 w-12 flex-shrink-0 flex items-center justify-center bg-lightprimary rounded-tw"></span>
             <div>
-              <h5 className="card-title">Revenue Forecast</h5>
-              <p className="card-subtitle">Overview of Profit</p>
+              <h5 className="h5Tag">Revenue Forecast</h5>
+              <p className="h5Tag">Overview of Profit</p>
             </div>
           </div>
           <div className="flex gap-5 items-center md:mt-0 mt-4">
             <div className="flex gap-2 text-sm items-center">
               <span className="bg-[#635BFF] rounded-full h-2 w-2"></span>
-              <span className="text-ld opacity-80">2024</span>
+              <span className="titleColor opacity-80">2024</span>
             </div>
-            <div className="flex gap-2 text-sm text-ld items-center">
+            <div className="flex gap-2 text-sm titleColor items-center">
               <span className="bg-[#FF6692] rounded-full h-2 w-2"></span>
-              <span className="text-ld opacity-80">2023</span>
+              <span className="titleColor opacity-80">2023</span>
             </div>
-            <div className="flex gap-2 text-sm text-ld items-center">
+            <div className="flex gap-2 text-sm titleColor items-center">
               <span className="bg-[#16CDC7] rounded-full h-2 w-2"></span>
-              <span className="text-ld opacity-80">2022</span>
+              <span className="titleColor opacity-80">2022</span>
             </div>
           </div>
         </div>

@@ -57,9 +57,9 @@ const CustomerChart = () => {
 
             <div className="bg-lightsecondary  ">
                 <div className="p-6">
-                    <p className="text-ld">Customers</p>
+                    <p className="titleColor">Customers</p>
                     <div className="flex gap-3 align-self">
-                        <h5 className="text-2xl">36,358</h5>
+                        <h5 className="h5Tag">36,358</h5>
                         <span className="text-13 text-ld font-semibold pt-1">-12%</span>
                     </div>
                 </div>
